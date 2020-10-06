@@ -12,8 +12,9 @@ def process_txt_files(path):
     if 'txt' in desc_file:
       file_total = os.path.join(input_dir, desc_file)
       with open(file_total, 'rb') as opened:
-        body += opened.readline().decode("utf-8").strip() + '<br/>'
-        body += opened.readline().decode("utf-8").strip() + '<br/><br/>'
+        body += "<br /><br />name: " +  opened.readline().decode("utf-8").strip()
+        body += "<br />weight: " + opened.readline().decode("utf-8").strip()
+  body += "<br />"
   return body
 
 if __name__ == "__main__":
